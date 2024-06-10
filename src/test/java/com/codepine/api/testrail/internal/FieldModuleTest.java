@@ -26,6 +26,7 @@ package com.codepine.api.testrail.internal;
 
 import com.codepine.api.testrail.model.Field;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.Test;
@@ -42,7 +43,7 @@ import static org.junit.Assert.assertEquals;
 public class FieldModuleTest {
 
     private static final ObjectMapper objectMapper = new ObjectMapper()
-            .setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES)
+            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE)
             .disable(SerializationFeature.FAIL_ON_EMPTY_BEANS)
             .registerModules(new FieldModule());
 
