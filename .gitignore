@@ -16,3 +16,4 @@ reports/*
 *.iml
 /target/
 /bin/
+.factorypath
